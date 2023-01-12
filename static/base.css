@@ -45,7 +45,7 @@ body {
 .vertical-container {
     width: 300px;
     background-color: rgba(134, 224, 206, 0.479);
-/*     height: 600px; */
+    /*     height: 600px; */
     border-radius: 20px;
     border-right: 2px solid rgb(104, 202, 202)
 }
@@ -55,7 +55,7 @@ body {
     border-radius: 20px;
     border: 2px solid rgb(104, 202, 202);
     margin-left: 50px;
-/*     margin-right: 50px; */
+    /*     margin-right: 50px; */
     margin-top: 20px;
     text-align: center;
     display: flex;
@@ -64,23 +64,22 @@ body {
 
 .item-container {
     display: flex;
-/*     height: fit-content; */
-/*     margin-left: auto; */
-/*     margin-right: auto; */
+    /*     height: fit-content; */
+        margin-left: auto;
+        margin-right: auto;
     margin-top: 20px;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .item {
     max-width: 200px;
-/*         height: 100%; */
+    /*         height: 100%; */
     margin-left: auto;
     margin-right: auto;
-/*     padding-left: 0px; */
+    /*     padding-left: 0px; */
     padding-right: 80px;
-/*     border: 1px solid black; */
-    flex:auto
-
+    /*     border: 1px solid black; */
+    flex: auto
 }
 
 .item img {
@@ -113,4 +112,12 @@ a {
 
 .detail--description {
     padding-left: 20px;
+}
+
+.register-form {
+    max-width: 300px;
+    /* background-color: red; */
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -10,8 +10,12 @@
     <div class="detail--description">
         <h1>{{book.title}}</h1>
         <h4>Author: {{book.author}}</h4>
-        <h4>Publish Date: {{book.date_published}}</h4>
-        <h4>{{book.category}}</h4>
+        <h4>Publish Date: {{book.date_published}}</h4> 
+        <h4> Categories:
+            {% for category in book.category.all %}
+                {{category}}
+            {% endfor %}
+        </h4>
         <h2>Description:</h2>
         <p>{{book.description}}</p>
 

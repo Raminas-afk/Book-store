@@ -9,17 +9,19 @@
 <div class="main-container">
     <div class="vertical-container">
         <h2>Categories</h2>
-        <p>Popular</p>
-        <p>Fantasy</p>
-        <p>Fiction</p>
-        <p>Best Sellers</p>
+        <p><a href="{% url 'sort-category' 1 %}">Fantasy</a></p>
+        <p><a href="{% url 'sort-category' 4 %}">Biography</a></p>
+        <p><a href="{% url 'sort-category' 3 %}">Romance</a></p>
+        {% comment %} <p>Fantasy</p>
+        <p>Fiction</p> {% endcomment %}
+        <p><a href="{% url 'sort-bestsellers' %}">Best Sellers</a></p>
     </div>
 {% comment %} <h2>Online book store</h2> {% endcomment %}
     <div class="item-container">
         {% for book in books %}
             <div class="item">
                 <a href="{% url 'book-detail' book.slug %}">
-                    <input type="image" src="{{book.cover.name}}" height=200 />
+                    <input type="image" src="{% get_media_prefix %}{{book.cover.name}}" height=200 />
                     <h3>{{book.title|truncatechars:40}}</h3>
                     <p>{{book.price}}€</p>
                 </a>
@@ -29,4 +31,3 @@
 </div>
 
 {% endblock %}
-flex-wrap: wrap
