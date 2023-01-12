@@ -4,7 +4,13 @@
 {% block title %} Main Page {% endblock %}
 
 {% block content %}
-
+<div class="top-messages">
+    {% if messages %}
+        {% for message in messages %}
+            <h1>{{ message }}</h1>
+        {% endfor %}
+    {% endif %}
+</div>
 
 <div class="main-container">
     <div class="vertical-container">

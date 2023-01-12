@@ -4,12 +4,29 @@
 
 
 {% block content %}
+{% comment %} {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %} {% endcomment %}
 
-<div class="login-form">
+<div class="login--main-container">
+    <h1> Login below </h1>
     <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        {{ login_form }}
+        {% for field in login_form %}
+                <h3> {{field.label}}<h3>
+                {{field}}
+                <h4>{{field.errors}}</h4>
+            {% endfor %} 
         <button class="submit">Login</button>
+        {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+        {% endif %}
     </form>
 </div>
 

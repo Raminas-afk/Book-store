@@ -4,16 +4,31 @@
 
 {% block content %}
 
-<div class="register-form">
-    <form method="POST" action="{% url 'register' %}">
-        {% csrf_token %}
-        {% comment %} {% for field in register_form %}
-            <h3> {{field.label}}<h3>
-            {{field}}
-            <h4>{{field.errors}}</h4>
-        {% endfor %} {% endcomment %}
-        {{register_form}}
-        <button type="submit">Register</button>
-    </form>
+<div class="auth--main-container">
+    <div class="register-form">
+        <h1>Create an account</h1>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            {% for field in register_form %}
+                <h3> {{field.label}}<h3>
+                {{field}}
+                <h4>{{field.errors}}</h4>
+            {% endfor %} 
+            {% comment %} {{register_form}} {% endcomment %}
+            <button type="submit">Register</button>
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+    <div class="register-requirements">
+        {% comment %} <p>Username: 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p> {% endcomment %}
+        <p>Your password can't be too similar to your other personal information.</p>
+        <p>Your password must contain at least 8 characters.</p>
+        <p>Your password can't be a commonly used password.</p>
+        <p>Your password can't be entirely numeric.</p>
+    </div>
 </div>
 {% endblock %}

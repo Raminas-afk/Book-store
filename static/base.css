@@ -42,6 +42,10 @@ body {
     color: white;
 }
 
+.top-messages {
+    text-align: center;
+}
+
 .vertical-container {
     width: 300px;
     background-color: rgba(134, 224, 206, 0.479);
@@ -57,16 +61,18 @@ body {
     margin-left: 50px;
     /*     margin-right: 50px; */
     margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     display: flex;
     width: 1400px;
+
 }
 
 .item-container {
     display: flex;
     /*     height: fit-content; */
-        margin-left: auto;
-        margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
     flex-wrap: wrap;
 }
@@ -114,10 +120,35 @@ a {
     padding-left: 20px;
 }
 
-.register-form {
-    max-width: 300px;
-    /* background-color: red; */
-    display: flex;
+.auth--main-container {
+    background-color: rgba(192, 248, 237, 0.479);
+    border-radius: 20px;
+    border: 2px solid rgb(104, 202, 202);
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    width: fit-content;
+}
+
+.register-requirements {
+    align-self: center;
+    margin-right: 40px;
+}
+
+.login--main-container {
+     background-color: rgba(192, 248, 237, 0.479);
+    border-radius: 20px;
+    border: 2px solid rgb(104, 202, 202);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+/*     margin-bottom: 20px; */
+    padding-left: 20px;
+    padding-bottom: 20px;
+/*     display: flex; */
+    width: 250px;
 }
