@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %} Main Page {% endblock %}
+
+{% block content %}
+
+
+<div class="main-container">
+    <div class="vertical-container">
+        <h2>Categories</h2>
+        <p>Popular</p>
+        <p>Fantasy</p>
+        <p>Fiction</p>
+        <p>Best Sellers</p>
+    </div>
+{% comment %} <h2>Online book store</h2> {% endcomment %}
+    <div class="item-container">
+        {% for book in books %}
+            <div class="item">
+                <a href="{% url 'book-detail' book.slug %}">
+                    <input type="image" src="{{book.cover.name}}" height=200 />
+                    <h3>{{book.title|truncatechars:40}}</h3>
+                    <p>{{book.price}}€</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+flex-wrap: wrap

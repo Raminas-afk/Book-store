@@ -1,0 +1,116 @@
+/* HOMEPAGE  + NAVBAR */
+
+body {
+    background-color: rgba(192, 248, 237, 0.479);
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    height: 53px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(156, 155, 155);
+}
+
+.navbar h1 {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.navbar a {
+    /*     float: left; */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.navbar input[type=text] {
+    margin-left: auto;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.navbar a:hover {
+    background-color: black;
+    color: white;
+}
+
+.vertical-container {
+    width: 300px;
+    background-color: rgba(134, 224, 206, 0.479);
+/*     height: 600px; */
+    border-radius: 20px;
+    border-right: 2px solid rgb(104, 202, 202)
+}
+
+.main-container {
+    background-color: rgba(192, 248, 237, 0.479);
+    border-radius: 20px;
+    border: 2px solid rgb(104, 202, 202);
+    margin-left: 50px;
+/*     margin-right: 50px; */
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    width: 1400px;
+}
+
+.item-container {
+    display: flex;
+/*     height: fit-content; */
+/*     margin-left: auto; */
+/*     margin-right: auto; */
+    margin-top: 20px;
+    flex-wrap:wrap;
+}
+
+.item {
+    max-width: 200px;
+/*         height: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+/*     padding-left: 0px; */
+    padding-right: 80px;
+/*     border: 1px solid black; */
+    flex:auto
+
+}
+
+.item img {
+    height: 200px;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* BOOK DETAIL PAGE */
+
+.detail--main-container {
+    margin-top: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 20px;
+    border: 2px solid rgb(104, 202, 202);
+    display: flex;
+    padding: 20px;
+}
+
+.detail--main-container img {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 500px;
+}
+
+.detail--description {
+    padding-left: 20px;
+}
