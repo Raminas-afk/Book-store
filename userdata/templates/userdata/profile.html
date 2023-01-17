@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit your shipping info {% endblock %}
+
+{% block content %}
+<div class="top-messages">
+    {% if messages %}
+        {% for message in messages %}
+            <h1>{{ message }}</h1>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div class="profile--main-container">
+    <h1>Edit your shipping information</h1>
+    <div class="shipping-form">
+        <form action="{% url 'profile' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                {{field.label}}<br>
+                {{field}}<br>
+            {% endfor %}<br>
+            <input class="submit-button-big" type="submit" value="Save">
+    </div>
+</div>
+
+{% endblock %}

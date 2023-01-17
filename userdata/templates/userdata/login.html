@@ -21,7 +21,7 @@
                 {{field}}
                 <h4>{{field.errors}}</h4>
             {% endfor %} 
-        <button class="submit">Login</button>
+        <input type="submit" value="Login" class="submit-button-big" />
         {% if messages %}
                 {% for message in messages %}
                     <p>{{ message }}</p>

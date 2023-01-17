@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} My Cart {% endblock %}
+
+{% block content %}
+
+<div class="shopping-cart">
+    {% if cart_books %}
+        <h1>Your shopping cart:</h1>
+        <div class="item-container">
+            {% comment %} {% for book in cart_books %} {% endcomment %}
+                {% comment %} <div class="item">
+                    <h4>
+                        <img class="shopping-cart-img" src={{book.cover}} /><br>
+                        {{book}}
+                        <form action="{% url 'remove-from-cart' book.slug %}" method="POST">
+                            {% csrf_token %}
+                            <button class="add-to-cart" type="submit">Remove from cart</button>
+                        </form>
+                    </h4>
+                </div>
+            {% endfor %} {% endcomment %}
+            <ul>
+                {% for book in cart_books %}
+                    <li class="cart-item">
+                        {{book|truncatechars:80}} {{book.price}}€
+                        <form action="{% url 'remove-from-cart' book.slug %}" method="POST">
+                            {% csrf_token %}
+                            <button class="submit-button" type="submit">Remove</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="shopping-cart--bottom">
+            <h1>Total price: {{total_price|floatformat:2}}€</h1>
+        </div>
+
+    {% else %}
+        <h1>Your shopping cart is empty.</h1>
+    {% endif %}
+
+</div>
+
+{% endblock %}

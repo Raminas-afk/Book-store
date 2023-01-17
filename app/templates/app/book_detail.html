@@ -5,6 +5,14 @@
 
 {% block content %}
 
+<div class="top-messages">
+    {% if messages %}
+        {% for message in messages %}
+            <h1>{{ message }}</h1>
+        {% endfor %}
+    {% endif %}
+</div>
+
 <div class="detail--main-container">
     <img src="{% static book.cover.path %}" />
     <div class="detail--description">
@@ -16,8 +24,14 @@
                 {{category}}
             {% endfor %}
         </h4>
+        <h4>Units in stock: {{book.quantity}}</h4>
         <h2>Description:</h2>
         <p>{{book.description}}</p>
+        <form method="POST" action="{% url "add-to-cart" book.slug %}">
+            {% csrf_token %}
+            {% comment %} <input type="hidden" value={{book}}></input> {% endcomment %}
+            <button class="submit-button-big" type="submit">Add to cart</button>
+        </form>
 
     </div>
 </div>

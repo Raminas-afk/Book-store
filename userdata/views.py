@@ -3,7 +3,33 @@ from .forms import NewUserForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from .forms import UserProfileForm
+from django.views.generic.edit import FormView
 # Create your views here.
+
+
+def profile(request):
+    userprofile = request.user.profile
+    if request.method == "POST":
+        # userprofile = request.user.profile
+        form = UserProfileForm(request.POST, instance=userprofile)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            messages.success(
+                request, "Succesfully updated shipping information.")
+        else:
+            messages.error(request, "Something went wrong. Try again.")
+    form = UserProfileForm(instance=userprofile)
+    return render(request, "userdata/profile.html", {
+        "form": form
+    })
+
+# class ProfileView(FormView):
+#     template_name = 'profile.html'
+#     form_class = UserProfileForm
+#     success_url = 'profile.html'
 
 
 def register_request(request):
@@ -31,7 +57,7 @@ def login_request(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"Welcome, {username} !")
+                messages.info(request, f"Welcome, {username.capitalize()} !")
                 return redirect("homepage")
             else:
                 messages.error(request, "Invalid username or password.")

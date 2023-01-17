@@ -59,7 +59,7 @@ body {
     border-radius: 20px;
     border: 2px solid rgb(104, 202, 202);
     margin-left: 50px;
-    /*     margin-right: 50px; */
+    margin-right: 500px;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -79,13 +79,9 @@ body {
 
 .item {
     max-width: 200px;
-    /*         height: 100%; */
     margin-left: auto;
     margin-right: auto;
-    /*     padding-left: 0px; */
     padding-right: 80px;
-    /*     border: 1px solid black; */
-    flex: auto
 }
 
 .item img {
@@ -129,6 +125,7 @@ a {
     margin-top: 20px;
     margin-bottom: 20px;
     padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 20px;
     display: flex;
     width: fit-content;
@@ -140,15 +137,67 @@ a {
 }
 
 .login--main-container {
-     background-color: rgba(192, 248, 237, 0.479);
+    background-color: rgba(192, 248, 237, 0.479);
     border-radius: 20px;
     border: 2px solid rgb(104, 202, 202);
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-/*     margin-bottom: 20px; */
     padding-left: 20px;
     padding-bottom: 20px;
-/*     display: flex; */
     width: 250px;
+}
+
+.shopping-cart {
+    background-color: rgba(192, 248, 237, 0.479);
+    border-radius: 20px;
+    border: 2px solid rgb(104, 202, 202);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    width: 1000px;
+}
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+}
+
+.profile--main-container {
+    background-color: rgba(192, 248, 237, 0.479);
+    border-radius: 20px;
+    border: 2px solid rgb(104, 202, 202);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    width: fit-content;
+}
+
+.submit-button {
+    margin-left: 10px;
+    border: 1px solid rgb(104, 202, 202);
+    border-radius: 10px;
+    background-color: wheat;
+}
+
+.submit-button-big {
+    height: 40px;
+    width: 120px;
+    margin-left: 10px;
+    border: 1px solid rgb(104, 202, 202);
+    border-radius: 10px;
+    background-color: wheat;
+    font-size: 20px;
+}
+
+.submit-button,
+.submit-button-big:hover {
+    cursor: pointer
 }
