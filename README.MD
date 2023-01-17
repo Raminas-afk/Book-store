@@ -1,6 +1,6 @@
 # Book Store
 
-A mock online book store. Currently you can sort books, check movie details, add to cart, login/register and fill in shipping information.
+A mock online book store. Currently you can sort books, check book details, add to cart, login/register and fill in shipping information.
 
 ## ScreenShots
 
