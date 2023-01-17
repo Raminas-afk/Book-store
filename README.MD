@@ -1,8 +1,8 @@
 # Book Store
 
-A mock online book store where you can browse books, check if in stock, register, fill shipping info and place an order. Not finished yet.
+A mock online book store. Currently you can sort books, check movie details, add to cart, login/register and fill in shipping information.
 
-## More screenshots later
+## ScreenShots
 
 ![Imgur](https://imgur.com/lwvaaxg.jpg)
 ![Imgur](https://imgur.com/L8814F4.jpg)
