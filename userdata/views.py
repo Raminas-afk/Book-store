@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserProfileForm
 from django.views.generic.edit import FormView
+from app.models import Order
 # Create your views here.
 
 
@@ -22,8 +23,10 @@ def profile(request):
         else:
             messages.error(request, "Something went wrong. Try again.")
     form = UserProfileForm(instance=userprofile)
+    orders = Order.objects.filter(customer=userprofile)
     return render(request, "userdata/profile.html", {
-        "form": form
+        "form": form,
+        "orders": orders
     })
 
 # class ProfileView(FormView):

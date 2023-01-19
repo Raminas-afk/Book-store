@@ -12,6 +12,35 @@
 </div>
 
 <div class="profile--main-container">
+    <h1> Your orders </h1>
+    <table class="all-orders">
+        <tr>
+            <th>Order ID:</th>
+            <th>Ordered books</th>
+            <th>Total price</th>
+            <th>Shipped</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{order.order_id|truncatechars:20}}</td>
+            <td>
+                {% for book in order.books.all %}
+                    {{book|truncatechars:30}}<br>
+                {% endfor %}
+            </td>
+            <td>{{order.price}}€</td>
+            {% if order.shipped %}
+                <td>Yes</td>
+            {% else %}
+                <td>No</td>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+</div>
+
+
+<div class="profile--main-container">
     <h1>Edit your shipping information</h1>
     <div class="shipping-form">
         <form action="{% url 'profile' %}" method="POST">

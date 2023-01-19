@@ -101,6 +101,8 @@ a {
     margin-left: 300px;
     margin-right: 300px;
     border-radius: 20px;
+    background-color: rgba(192, 248, 237, 0.479);
+
     border: 2px solid rgb(104, 202, 202);
     display: flex;
     padding: 20px;
@@ -164,6 +166,15 @@ a {
 .cart-item {
     display: flex;
     align-items: center;
+}
+
+.profile {
+    display: flex;
+}
+
+.all-orders td {
+    padding: 20px;
+    border-bottom: 3px solid black
 }
 
 .profile--main-container {

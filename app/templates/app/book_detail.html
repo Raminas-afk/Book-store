@@ -29,7 +29,6 @@
         <p>{{book.description}}</p>
         <form method="POST" action="{% url "add-to-cart" book.slug %}">
             {% csrf_token %}
-            {% comment %} <input type="hidden" value={{book}}></input> {% endcomment %}
             <button class="submit-button-big" type="submit">Add to cart</button>
         </form>
 

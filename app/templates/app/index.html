@@ -18,11 +18,8 @@
         <p><a href="{% url 'sort-category' 1 %}">Fantasy</a></p>
         <p><a href="{% url 'sort-category' 4 %}">Biography</a></p>
         <p><a href="{% url 'sort-category' 3 %}">Romance</a></p>
-        {% comment %} <p>Fantasy</p>
-        <p>Fiction</p> {% endcomment %}
         <p><a href="{% url 'sort-bestsellers' %}">Best Sellers</a></p>
     </div>
-{% comment %} <h2>Online book store</h2> {% endcomment %}
     <div class="item-container">
         {% for book in books %}
             <div class="item">

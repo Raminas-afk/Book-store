@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Book, Cart
+from .models import Book, Cart, Order
 from django.contrib import messages
+
 # Create your views here.
 
 
@@ -35,13 +36,9 @@ def book_detail(request, slug):
 
 def my_cart(request):
     if request.method == "GET":
-        # a = Cart.total_price()
-
         instance = Cart.objects.get(customer=request.user.profile)
         cart_books = instance.books.all()
         total_price = instance.get_total_price()
-        # cart_books = instance.books.all()
-        # total_price = cart_books.get_total_price()
         return render(request, "app/my_cart.html", {
             "cart_books": cart_books,
             "total_price": total_price
@@ -68,4 +65,17 @@ def remove_from_cart(request, slug):
     return redirect("my-cart")
 
 
-# def place_order(request)""
+def place_order(request):
+    customer = request.user.profile
+    customer_cart = Cart.objects.get(customer=customer)
+    total_price = customer_cart.get_total_price()
+    new_order = Order.objects.create(
+        customer=customer,
+        price=total_price,
+    )
+    new_order.books.set(customer_cart.books.all())
+    new_order.save()
+    for book in customer_cart.books.all():  # Removes items from cart after order
+        customer_cart.books.remove(book)
+    messages.success(request, "Your order is done!")
+    return redirect("my-cart")
