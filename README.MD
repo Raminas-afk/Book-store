@@ -5,7 +5,7 @@ A mock online book store. Currently you can sort books, check book details, add 
 ## ScreenShots
 
 ![Imgur](https://imgur.com/lwvaaxg.jpg)
-![Imgur](https://imgur.com/L8814F4.jpg)
+![Imgur](https://imgur.com/TSZbxeo.jpg)
 ![Imgur](https://imgur.com/haMrDRa.jpg)
 ![Imgur](https://imgur.com/WdhnfB2.jpg)
 ![Imgur](https://imgur.com/aHpXBBA.jpg)
